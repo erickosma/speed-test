@@ -14,7 +14,7 @@ now = datetime.datetime.now()
 
 
 def insert_error():
-    tableName = "/home/zoy/PycharmProjects/speed-test/error.csv"
+    tableName = "$$/speed-test/error.csv"
     row = [datetime.datetime.now()]
     with open(tableName, 'a') as csvFile:
         writer = csv.writer(csvFile)
@@ -34,11 +34,11 @@ def get_speed():
 
 
 def get_sheet():
-    jsonFile = '/home/zoy/PycharmProjects/speed-test/Project-a9c411992d1a.json'
+    jsonFile = '$$/Project-a9c411992d1a.json'
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     creds = ServiceAccountCredentials.from_json_keyfile_name(jsonFile, scope)
     client = gspread.authorize(creds)
-    return client.open_by_key('1NCDOdFtQrJyf-nT4sJijvnoHkZiIG7C8BJPkYPqjdRc').sheet1
+    return client.open_by_key('$$1NCDOdFtQrJyf-nT4sJijvnoHkZiIG7C8BJPkYPqjdRc').sheet1
 
 
 try:
